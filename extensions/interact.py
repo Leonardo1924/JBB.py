@@ -141,6 +141,17 @@ class Interact(commands.Cog):
             "You can only do 1v1.",
             "Stop trying to fight your inner demons",
             "(ᗒᗣᗕ)՞o==|::::::::::::> {0} was wrecked by {1}." if randint(0,99) > 49 else "(ᗒᗣᗕ)՞o==|::::::::::::> {0} was wrecked by {1}.")
+        
+    @commands.command(name='trap',
+                      description="trap that guy, but remenber, you migth lose",
+                      brief="trap someone")
+    async def trap(self, ctx):
+        await send_msg(
+            ctx,
+            "Tell me who you want to trap",
+            "You can only do 1v1.",
+            "Stop trying to fight your inner demons",
+            "( ͡° ͜ʖ ͡°) {0} was trapped by {1}.")
 
 def setup(bot):
     bot.add_cog(Interact(bot))

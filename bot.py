@@ -1,13 +1,13 @@
 import discord
 import time
 from discord.ext import commands
-import asyncio 
+import asyncio
 import json
 import traceback
 from datetime import datetime
 from os import path, listdir
 from aux.stats import Stats
-from aux.misc import minutes_passed 
+from aux.misc import minutes_passed
 
 bot = commands.Bot(
     command_prefix = '*',
@@ -34,8 +34,8 @@ def main():
     bot.REPLIES_PATH='./db/replies.json'
     bot.SLOWMODE_PATH='./db/slow.json'
     bot.IP_PATH='./ip.txt'
-    bot.DOTFILES_PATH='./db/dotfiles.json'
-   
+    #bot.DOTFILES_PATH='./db/dotfiles.json'
+
     #load media
     bot.imagesMap = {}
     for f in listdir(bot.IMAGES_PATH):
@@ -54,7 +54,7 @@ def main():
         if path.isfile(path.join(bot.MUSIC_PATH, f)):
             filename, _ = path.splitext(f)
             bot.musicMap[filename.lower()] = f
-    
+
     #load stats
     bot.stats = Stats(bot.STATS_PATH)
 
